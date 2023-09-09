@@ -1,4 +1,7 @@
-import numpy as np
+"""
+"""
+
+# Standard Library
 import os
 
 
@@ -21,13 +24,19 @@ def rename_files(root_dir):
         for filename in files:
             file_path = os.path.join(root, filename)
             if filename.endswith('.hea'):
+                if n in [999, 22674]:
+                    os.remove(file_path)
+                    continue
                 new_name = os.path.join(root, f"patient_{n:05d}.hea")
                 os.rename(file_path, new_name)
 
                 process_header_file(file_path, filename)
 
             elif filename.endswith('.mat'):
+                if n in [999, 22674]:
+                    os.remove(file_path)
+                    n += 1
+                    continue
                 new_name = os.path.join(root, f"patient_{n:05d}.mat")
                 os.rename(file_path, new_name)
                 n+=1
-
