@@ -107,8 +107,7 @@ class CardiacData:
 
     def save_ecg_data_nn(self):
         signal_data = [self.get_patient_ecg(record) for record in self.ecg_data]
-        # np.save("ecg_array_nn.npy", signal_data)
-        np.save("TESTecg_array_nn.npy", signal_data)
+        np.save("ecg_array_nn.npy", signal_data)
 
 
     def get_patient_heart_conditions(self, patient_record):
@@ -125,5 +124,4 @@ class CardiacData:
                 cond_index = np.where(self.all_conditions['label'].astype(str) == patient_condition)
                 conditions_binaries[i, cond_index] = 1
 
-        # np.save("patient_conditions_binaries.npy", conditions_binaries)
-        np.save("TESTpatient_conditions_binaries.npy", conditions_binaries)
+        np.save("patient_conditions_binaries.npy", conditions_binaries)
