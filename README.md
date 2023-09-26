@@ -1,5 +1,5 @@
 # ecg_arrythmia_detection_tool
-
+Submitted to MediHacks 2023 Hackathon
 ## Steps to run ecg_arrythmia_detection_tool:
 
 1. Download zip file containing the ECG dataset from this study: https://physionet.org/content/ecg-arrhythmia/1.0.0/
